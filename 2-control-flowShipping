@@ -1,0 +1,37 @@
+# Sal's Shipping
+
+weight = float(input("What is the weight of your package? "))
+premium_ground_cost = 125
+
+# Ground Shipping
+if weight < 2:
+  ground_cost = (weight * 1.50) + 20
+elif weight > 2 and weight <= 6:
+  ground_cost = (weight * 3) + 20
+elif weight > 6 and weight <= 10:
+  ground_cost = (weight * 4) + 20
+else:
+  ground_cost = (weight * 4.75) + 20
+print("Ground Cost: ", ground_cost)
+
+# Premium Shipping
+print("Premium Ground Cost", 125.00)
+
+# Drone Shipping
+if weight < 2:
+  drone_cost = weight * 4.50
+elif weight > 2 and weight <= 6:
+  drone_cost = weight * 9
+elif weight > 6 and weight <= 10:
+  drone_cost = weight * 12
+else:
+  drone_cost = weight * 14.25
+print("Drone Cost: ", drone_cost)
+
+if ground_cost < premium_ground_cost and ground_cost < drone_cost:
+  smallest = "Ground cost"
+elif premium_ground_cost < drone_cost:
+  smallest = "Premium ground shipping"
+else:
+  smallest = "Drone Shipping"
+print(smallest, "is the least expensive delivery method")
